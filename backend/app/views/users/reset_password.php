@@ -30,7 +30,7 @@
 <body class="hold-transition register-page" style="background: url('<?php echo base_url(); ?>assets/img/bg-4.jpg') fixed;">
 <div class="register-box">
     <div class="register-logo">
-        <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>assets/img/logo.png" alt="FXTMart"></a>
+        <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>assets/img/poassetbenefit.png" alt="FXTMart"></a>
     </div>
 
     <div class="register-box-body">
