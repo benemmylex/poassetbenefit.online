@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +21,7 @@
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/skins/skin-black-light.min.css">
     <!-- custom style -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/util.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/util.css" >
     <!-- Included Style -->
     <?php
     if (isset($style)) echo $style;
@@ -47,120 +46,106 @@
         }
     </style>
 
-    <!-- Smartsupp Live Chat script -->
-    <script type="text/javascript">
-        var _smartsupp = _smartsupp || {};
-        _smartsupp.key = '1ec5bc959fd23785a8d4da2b7713d532664d69c9';
-        window.smartsupp || (function(d) {
-            var s, c, o = smartsupp = function() {
-                o._.push(arguments)
-            };
-            o._ = [];
-            s = d.getElementsByTagName('script')[0];
-            c = d.createElement('script');
-            c.type = 'text/javascript';
-            c.charset = 'utf-8';
-            c.async = true;
-            c.src = 'https://www.smartsuppchat.com/loader.js?';
-            s.parentNode.insertBefore(c, s);
-        })(document);
-    </script>
-    <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '1ec5bc959fd23785a8d4da2b7713d532664d69c9';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
 </head>
-
 <body class="hold-transition skin-black-light sidebar-mini">
-    <div class="wrapper">
+<div class="wrapper">
 
-        <header class="main-header">
+    <header class="main-header">
 
-            <!-- Logo -->
-            <a href="<?php echo base_url(); ?>home" class="logo">
-                <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini">
-                    <p src="<?php echo base_url(); ?>assets/img/logo-sm.png" alt="<?php echo SITE_TITLE; ?>" width="50" height="50"><?php echo SITE_TITLE; ?>
-                    <p>
-                </span>
-                <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg">
-                    <p src="<?php echo base_url(); ?>assets/img/logo-s.png" alt="<?php echo SITE_TITLE; ?>" style="width:195px; height:auto"><?php echo SITE_TITLE; ?></p>
-                </span>
+        <!-- Logo -->
+        <a href="<?php echo base_url(); ?>home" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><img src="<?php echo base_url(); ?>assets/img/logo-sm.png" alt="<?php echo SITE_TITLE; ?>" width="50" height="50"> </span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><img src="<?php echo base_url(); ?>assets/img/logo-s.png" alt="<?php echo SITE_TITLE; ?>" style="width:195px; height:auto"></span>
+        </a>
+
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
             </a>
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <?php if (!$this->session->has_userdata(A_UID) || $this->session->userdata(A_UID) != $this->session->userdata(UID)) : ?>
+                    <li>
+                        <a href="<?php echo base_url(); ?>fund">Deposit <i class="fa fa-plus-square"></i> </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url(); ?>fund-list" id="main-balance"><?php echo $this->General_model->get_balance($this->session->userdata(UID)); ?></a>
+                    </li>
+                    <?php endif; ?>
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="<?php echo base_url().$this->Util_model->picture(); ?>" class="user-image" alt="User Image">
+                            <span class="hidden-xs"><?php echo $this->Util_model->get_user_info($this->session->userdata(UID)); ?></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header">
+                                <img src="<?php echo base_url().$this->Util_model->picture(); ?>" class="img-circle" alt="User Image">
 
-            <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top">
-                <!-- Sidebar toggle button-->
-                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-                </a>
-                <!-- Navbar Right Menu -->
-                <div class="navbar-custom-menu">
-                    <ul class="nav navbar-nav">
-                        <?php if (!$this->session->has_userdata(A_UID) || $this->session->userdata(A_UID) != $this->session->userdata(UID)) : ?>
-                            <li>
-                                <a href="<?php echo base_url(); ?>fund">Deposit <i class="fa fa-plus-square"></i> </a>
+                                <p>
+                                    <?php echo $this->Util_model->get_user_info($this->session->userdata(UID)); ?>
+                                    <small>Member since <?php echo new_date_format($this->Util_model->get_user_info($this->session->userdata(UID),"date"), "Y-m-d H:i:s", "M. Y"); ?></small>
+                                </p>
                             </li>
-                            <li>
-                                <a href="<?php echo base_url(); ?>fund-list" id="main-balance"><?php echo $this->General_model->get_balance($this->session->userdata(UID)); ?></a>
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-right">
+                                    <a href="<?php echo base_url(); ?>sign-out" class="btn btn-danger btn-flat">Sign out</a>
+                                </div>
                             </li>
-                        <?php endif; ?>
-                        <!-- User Account: style can be found in dropdown.less -->
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="<?php echo base_url() . $this->Util_model->picture(); ?>" class="user-image" alt="User Image">
-                                <span class="hidden-xs"><?php echo $this->Util_model->get_user_info($this->session->userdata(UID)); ?></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <!-- User image -->
-                                <li class="user-header">
-                                    <img src="<?php echo base_url() . $this->Util_model->picture(); ?>" class="img-circle" alt="User Image">
+                        </ul>
+                    </li>
+                </ul>
+            </div>
 
-                                    <p>
-                                        <?php echo $this->Util_model->get_user_info($this->session->userdata(UID)); ?>
-                                        <small>Member since <?php echo new_date_format($this->Util_model->get_user_info($this->session->userdata(UID), "date"), "Y-m-d H:i:s", "M. Y"); ?></small>
-                                    </p>
-                                </li>
-                                <!-- Menu Footer-->
-                                <li class="user-footer">
-                                    <div class="pull-right">
-                                        <a href="<?php echo base_url(); ?>sign-out" class="btn btn-danger btn-flat">Sign out</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+        </nav>
+    </header>
 
-            </nav>
-        </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <?php $this->load->view("layouts/sidebar"); ?>
 
-        <!-- Left side column. contains the logo and sidebar -->
-        <?php $this->load->view("layouts/sidebar"); ?>
+    <!-- Content Wrapper. Contains page content -->
+    <?php $this->load->view($main_content); ?>
+    <!-- /.content-wrapper -->
 
-        <!-- Content Wrapper. Contains page content -->
-        <?php $this->load->view($main_content); ?>
-        <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <strong>Copyright &copy; <?php echo date('Y'); ?> <a href="#"><?php echo SITE_TITLE; ?></a>.</strong> All rights
+        reserved.
+    </footer>
 
-        <footer class="main-footer">
-            <strong>Copyright &copy; <?php echo date('Y'); ?> <a href="#"><?php echo SITE_TITLE; ?></a>.</strong> All rights
-            reserved.
-        </footer>
+</div>
+<!-- ./wrapper -->
 
-    </div>
-    <!-- ./wrapper -->
-
-    <!-- FastClick -->
-    <script src="<?php echo base_url(); ?>assets/plugins/fastclick/fastclick.js"></script>
-    <!-- AdminLTE App -->
-    <script src="<?php echo base_url(); ?>assets/dist/js/app.min.js"></script>
-    <!-- Sparkline -->
-    <script src="<?php echo base_url(); ?>assets/plugins/sparkline/jquery.sparkline.min.js"></script>
-    <!-- jvectormap -->
-    <script src="<?php echo base_url(); ?>assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <!-- SlimScroll 1.3.0 -->
-    <script src="<?php echo base_url(); ?>assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="<?php echo base_url(); ?>assets/plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="<?php echo base_url(); ?>assets/dist/js/app.min.js"></script>
+<!-- Sparkline -->
+<script src="<?php echo base_url(); ?>assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+<!-- jvectormap -->
+<script src="<?php echo base_url(); ?>assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- SlimScroll 1.3.0 -->
+<script src="<?php echo base_url(); ?>assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 
 
 </body>
-
 </html>
