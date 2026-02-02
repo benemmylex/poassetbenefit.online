@@ -98,7 +98,7 @@
                                         ";
                     foreach ($s->result_array() as $row) {
                         $uid = $row['creditor'];
-                        $desc = $row['desc'];
+                        $desc = $row['creditor_desc'];
                         $label = "success";
                         $picture = $this->Util_model->picture($uid);
                         $username = $this->Util_model->get_user_info($uid, "username", "profile");

@@ -646,7 +646,7 @@
                                     ";
                             foreach ($s->result_array() as $row) {
                                 $uid = $row['debitor'];
-                                $desc = $row['creditor_desc'];
+                                $desc = $row['debitor_desc'];
                                 $label = ($row['type'] == 'credit') ? "success" : "danger";
                                 $picture = $this->Util_model->picture($uid);
                                 $username = $this->Util_model->get_user_info($uid, "username", "profile");
@@ -706,7 +706,7 @@
                                     ";
                             foreach ($s->result_array() as $row) {
                                 $uid = $row['creditor'];
-                                $desc = $row['desc'];
+                                $desc = $row['creditor_desc'];
                                 $label = "success";
                                 $picture = $this->Util_model->picture($uid);
                                 $username = $this->Util_model->get_user_info($uid, "username", "profile");
