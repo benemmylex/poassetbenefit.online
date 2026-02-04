@@ -29,7 +29,7 @@ class Mail_model extends CI_Model
         $label = SITE_TITLE;
         $site_title = SITE_TITLE;
         $site_url = SITE_URL;
-        $logo = base_url() . "assets/img/poassetbenefit.png";
+        $logo = base_url() . "assets/img/logo.png";
         if (is_array($msg)) {
             $msg = $this->template($msg);
         } else {
@@ -91,7 +91,7 @@ class Mail_model extends CI_Model
         $site_title = SITE_TITLE;
         $site_url = $this->Util_model->get_option("site_url");
         $tagline = $this->Util_model->get_option("site_tagline");
-        $logo = base_url() . "assets/img/poassetbenefit.png";
+        $logo = base_url() . "assets/img/logo.png";
 
         $button = $arr['[BUTTON]'];
         $name = $arr['[NAME]'];

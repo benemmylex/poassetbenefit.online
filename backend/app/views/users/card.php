@@ -25,8 +25,8 @@
                     <div class="box-body padding-2x ">
                         <div class="row">
                             <div class="col-xs-12">
-                                <h3>PO ASSET BENEFIT  Debit/Credit Card</h3>
-                                <p>Order your PO ASSET BENEFIT debit/credit card today and enjoy seamless transactions worldwide.</p>
+                                <h3>ZENCONEX  Debit/Credit Card</h3>
+                                <p>Order your ZENCONEX debit/credit card today and enjoy seamless transactions worldwide.</p>
                             </div>
                         </div>
                         <div class="row">
@@ -43,7 +43,7 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <h4>How to Order:</h4>
-                                <p>To order your card, please contact our support team at <a href='mailto:support@poassetbenefit.online'>support@poassetbenefit.online</a>.</p>
+                                <p>To order your card, please contact our support team at <a href='mailto:support@zenconex.online'>support@zenconex.online</a>.</p>
                             </div>
                         </div>
                         <div class="row">
@@ -54,7 +54,7 @@
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button class="btn btn-primary btn-lg" onclick="msg('Message Support at <a href=\'mailto:support@poassetbenefit.online\'>support@poassetbenefit.online</a> to order your card', 'alert-info', 1, $('#support_message_container'))"> Get Card</button>
+                        <button class="btn btn-primary btn-lg" onclick="msg('Message Support at <a href=\'mailto:support@zenconex.online\'>support@zenconex.online</a> to order your card', 'alert-info', 1, $('#support_message_container'))"> Get Card</button>
                     </div>
                     <!--/.box-footer-->
                 </div>

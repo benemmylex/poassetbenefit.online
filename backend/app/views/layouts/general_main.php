@@ -470,7 +470,7 @@ Author: Webstrot
 <!-- Smartsupp Live Chat script -->
 <script type="text/javascript">
 var _smartsupp = _smartsupp || {};
-_smartsupp.key = '1ec5bc959fd23785a8d4da2b7713d532664d69c9';
+_smartsupp.key = '1b96ad7dda05b2d98f5add104cfe1a2a6db25590';
 window.smartsupp||(function(d) {
   var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
   s=d.getElementsByTagName('script')[0];c=d.createElement('script');

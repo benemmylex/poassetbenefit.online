@@ -364,8 +364,8 @@ class Util_model extends CI_Model
 		$this->load->library('email');
 		$config = array();
 		$config['protocol'] = 'smtp';
-		$config['smtp_host'] = 'mail.poassetbenefit.online';
-		$config['smtp_user'] = 'support@poassetbenefit.online';
+		$config['smtp_host'] = 'mail.zenconex.online';
+		$config['smtp_user'] = 'support@zenconex.online';
 		$config['smtp_port'] = 587;
 		$config['smtp_pass'] = 'Omo4real@';
 		//$config['smtp_crypto'] = 'tls';
